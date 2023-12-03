@@ -12,22 +12,18 @@ def preds(year, month):
 
 class predict(Resource):
     def post(self):
-        parse = reqparse.RequestParser() #using form data type
-        
+        # the api will take in a json file with the year and month
+        # and return the prediction
+        parse = reqparse.RequestParser()
         parse.add_argument('year', type=int, required=True)
         parse.add_argument('month', type=int, required=True)
         args = parse.parse_args()
-        
         year = args['year']
         month = args['month']
-        
         prediction = preds(year, month)
-        print(prediction)
-        
         return prediction, 200
-    
 api = Api(app)
 api.add_resource(predict, '/predict')
 
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+if __name__ == '_main_':
+    app.run(port=5000,debug=True)
