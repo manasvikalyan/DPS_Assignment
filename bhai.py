@@ -14,7 +14,7 @@ def get_values_from_diff_prediction(df, diff_prediction):
 
 # Streamlit App
 def main():
-    st.title("ML Prediction App")
+    st.title("Accident Prediction for 2021 ")
 
     # Input: Month
     month = st.selectbox("Select Month", [
