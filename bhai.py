@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 from statsmodels.tsa.statespace.sarimax import SARIMAX
-import matplotlib.pyplot as plt
+
 
 # Assuming df_alcohol['Value First Difference'] is your time series data
 # and you have already determined the order and seasonal_order parameters
